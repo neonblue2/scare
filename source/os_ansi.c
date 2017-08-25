@@ -35,6 +35,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <readline/readline.h>
 
 #include "scare.h"
 
@@ -225,9 +226,8 @@ os_read_line (sc_char *buffer, sc_int length)
   if (feof (stdin))
     sc_quit_game (game);
 
-  putchar ('>');
   fflush (stdout);
-  fgets (buffer, length, stdin);
+  strcpy (buffer, readline(">"));
   return TRUE;
 }
 

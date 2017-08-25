@@ -35,7 +35,7 @@ CFLAGS	= -O2 -D__NO_STRING_INLINES -fPIC -ansi -D_STRICT_ANSI_ -Wall -W   \
 	  -Wwrite-strings -Wundef -Wbad-function-cast -Waggregate-return   \
 	  -Wnested-externs						   \
 	  $(DEBUG) $(CEXTRA)
-LDLIBS	=
+LDLIBS	= -lreadline
 LDEXTRA	=
 LDFLAGS	= $(DEBUG) $(LDEXTRA)
 
