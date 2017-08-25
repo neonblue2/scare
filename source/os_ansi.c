@@ -398,6 +398,13 @@ os_display_hints (sc_game game_)
 }
 
 
+void
+disable_autocomplete ()
+{
+  rl_bind_key ('\t', rl_insert);
+}
+
+
 /*
  * main()
  */
@@ -449,6 +456,8 @@ main (int argc, const char *argv[])
     }
 
   game_file = argv[1];
+
+  disable_autocomplete ();
 
   sc_interpret_game (game);
   sc_free_game (game);
