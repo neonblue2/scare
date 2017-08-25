@@ -228,6 +228,11 @@ os_read_line (sc_char *buffer, sc_int length)
 
   fflush (stdout);
   strcpy (buffer, readline(">"));
+
+  if (buffer[0] != '\0') {
+    add_history (buffer);
+  }
+
   return TRUE;
 }
 
