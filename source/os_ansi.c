@@ -230,7 +230,7 @@ os_read_line (sc_char *buffer, sc_int length)
     sc_quit_game (game);
 
   fflush (stdout);
-  strcpy (buffer, readline(">"));
+  strncpy (buffer, readline(">"), length);
 
   if (buffer[0] != '\0') {
     add_history (buffer);
