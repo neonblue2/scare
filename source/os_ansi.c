@@ -47,6 +47,8 @@ static sc_int line_length = 0;
 static const sc_char *game_file;
 static sc_game game;
 
+void disable_autocomplete (void);
+
 
 /*
  * full_flush()
@@ -399,7 +401,7 @@ os_display_hints (sc_game game_)
 
 
 void
-disable_autocomplete ()
+disable_autocomplete (void)
 {
   rl_bind_key ('\t', rl_insert);
 }
